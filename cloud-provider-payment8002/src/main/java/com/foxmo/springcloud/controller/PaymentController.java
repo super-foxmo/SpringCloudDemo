@@ -3,7 +3,6 @@ package com.foxmo.springcloud.controller;
 import com.foxmo.springcloud.entities.CommonResult;
 import com.foxmo.springcloud.entities.Payment;
 import com.foxmo.springcloud.service.PaymentService;
-import jdk.nashorn.internal.ir.CallNode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;

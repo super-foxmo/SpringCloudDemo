@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.foxmo.springcloud.dao.PaymentDao">
+    <insert id="createPayment" parameterType="com.foxmo.springcloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values(#{serial});
+    </insert>
+
+    <resultMap id="BaseResultMap" type="com.foxmo.springcloud.entities.Payment">
+        <id column="id" property="id"></id>
+        <id column="serial" property="serial"></id>
+    </resultMap>
+    <select id="getPaymentById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+               *
+        from
+            payment
+        where
+            id = #{id};
+    </select>
+</mapper>
